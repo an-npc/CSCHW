@@ -7,115 +7,121 @@
     <title>Wang In-Class Exercises</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-      table, th. td {border: 1px solid black;}
+      table, th. td {border: 1px solid black; test-align: center;}
       h1,h2 {color: darkgreen;}
-      strong,i { color: darkorange;}
+      strong,i { font-size: 1.5em; text-decoration: underline;}
       #loc {color: blue;}
       #topic {color: darkviolet;}
       label {color: brown;}
       a {color: blue;}
-      a:hover {color: aqua;}}
+      a:hover {color: lightblue;}
+      #inner { color: red; }
+      label { font-weight: bold;}
+      input { background-color: lightblue; }
+      #city { line-height: 2em;}
     </style>
   </head>
   <main className="App">
-    <img
-      src="http://www.csc.lsu.edu/~qywang/CS2610/LSU_logo.png
-    "
-      width="20%"
-    ></img>
-    <h1>About</h1>
-    <p>
-      Welcome to the
-      <strong> Division of Computer Science and Enginering</strong> at LSU!
-      The division resides in the newly formed School of Electrical
-      Engineering and Computer Science (EECS) in the
-      <i>College of Engineering</i>
-    </p>
-    <h2>The location of out collaborators</h2>
-    <ul>
-      <li>
-        USA
-        <ul>
-          <li>
-            <a href="https://en.wikipedia.org/wiki/New_York_City">
-              New York
-            </a>
-          </li>
-          <li>
-            <a href="https://en.wikipedia.org/wiki/Columbus,_Ohio">
-              Columbus
-            </a>
-          </li>
-          <li>
-            <a href="https://en.wikipedia.org/wiki/Austin,_Texas">Austin</a>
-          </li>
-          <li>
-            <a href="https://en.wikipedia.org/wiki/Philadelphia">Philly</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        World
-        <ul>
-          <li>
-            <a href="https://en.wikipedia.org/wiki/Ottawa">Ottawa</a>
-          </li>
-          <li>
-            <a href="https://en.wikipedia.org/wiki/Sydney">Sydney</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <table>
-      <tr>
-        <th>Location</th>
-        <th>Topic</th>
-      </tr>
-      <tr>
-        <td>New York</td>
-        <td>JavaScript & jQuery</td>
-      </tr>
-      <tr>
-        <td>San Francisco</td>
-        <td>HTML & CSS</td>
-      </tr>
-    </table>
+      <img
+        src="http://www.csc.lsu.edu/~qywang/CS2610/LSU_logo.png"
+        width="20%"
+      ></img>
+      <h1>About</h1>
+      <p>
+        Welcome to the
+        <strong> Division of Computer Science and Enginering</strong> at LSU!
+        The division resides in the newly formed School of Electrical
+        Engineering and Computer Science (EECS) in the
+        <i>College of Engineering</i>.
+      </p>
+      <h2>The location of out collaborators</h2>
+      <ul>
+        <li>
+          USA
+          <ul id="inner">
+            <li id="city">
+              <a href="https://en.wikipedia.org/wiki/New_York_City">
+                New York
+              </a>
+            </li>
+            <li id="city">
+              <a href="https://en.wikipedia.org/wiki/Columbus,_Ohio">
+                Columbus
+              </a>
+            </li>
+            <li id="city">
+              <a href="https://en.wikipedia.org/wiki/Austin,_Texas">Austin</a>
+            </li>
+            <li id="city">
+              <a href="https://en.wikipedia.org/wiki/Philadelphia">Philly</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          World
+          <ul id="inner">
+            <li id="city">
+              <a href="https://en.wikipedia.org/wiki/Ottawa">Ottawa</a>
+            </li>
+            <li id="city">
+              <a href="https://en.wikipedia.org/wiki/Sydney">Sydney</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h2>Upcoming Classes</h2>
+      <table>
+        <tr>
+          <th>Location</th>
+          <th>Topic</th>
+        </tr>
+        <tr>
+          <td id="loc">New York</td>
+          <td id="topic">JavaScript & jQuery</td>
+        </tr>
+        <tr>
+          <td id="loc">San Francisco</td>
+          <td id="topic">HTML & CSS</td>
+        </tr>
+      </table>
 
-    <h2>Sign Up!</h2>
-    <label>
-      Name: <input type="text" name="name" />
-    </label>
-    <br />
-    <label>
-      Email: <input type="text" name="name" />
-    </label>
-    <br />
-    <label>
-      Location:
-      <select name="location" id="location">
-        <option value="SF">San Francisco</option>
-        <option value="NY">New York</option>
-      </select>
-    </label>
-    <br />
-    <fieldset>
-      <legend>Gender: </legend>
-      <label>Female</label>
-      <input type="radio" size="small" />
-      <label>Male</label>
-      <input type="radio" />
-    </fieldset>
-    <br />
-    <br />
-    <label>Experience:</label>
-    <br />
-    <textarea></textarea>
-    <br />
-    <button type="submit">Sign Up</button>
-    <div id="links">
-      <a href="https://x.com/?lang=en">Twitter</a> |
-      <a href="https://www.facebook.com/">Facebook</a> |
-      <a href="https://www.flickr.com/">Flickr</a>
-    </div>
-  </main>
+      <h2>Sign Up!</h2>
+      <label>
+        Name: <input type="text" name="name" />
+      </label>
+      <br />
+      <label>
+        Email: <input type="text" name="name" />
+      </label>
+      <br />
+      <label>
+        Location:
+        <select name="location" id="location">
+          <option value="SF">San Francisco</option>
+          <option value="NY">New York</option>
+        </select>
+      </label>
+      <br />
+      <fieldset>
+        <legend>
+          <label>Gender:</label>
+        </legend>
+        <label>Female</label>
+        <input type="radio" size="small" />
+        <label>Male</label>
+        <input type="radio" />
+      </fieldset>
+      <br />
+      <br />
+      <label>Experience:</label>
+      <br />
+      <textarea></textarea>
+      <br />
+      <button type="submit">Sign Up</button>
+      <div id="links">
+        <a href="https://x.com/?lang=en">Twitter</a> |
+        <a href="https://www.facebook.com/">Facebook</a> |
+        <a href="https://www.flickr.com/">Flickr</a>
+      </div>
+    </main>
 </html>
