@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Video Watcher</title>
+    <link rel="stylesheet" type="text/css" href="Video%20Watcher_files/bootstrap.css">
+    <style type="text/css">
+        #videos-list img {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h2 class="page-header">Best Videos Ever </h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span3">
+                <ul id="videos-list">
+
+                </ul>
+            </div>
+            <div class="span9" id="video-watcher" style="display: block;">
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="Video%20Watcher_files/jquery.js"></script>
+    <script>
+
+        var videos = [
+            {
+                "youtubeId": "TddFnTB_7IM",
+                "title": "Trip through the 80s"
+            },
+            {
+                "youtubeId": "epUk3T2Kfno",
+                "title": "Otters Holding Hands"
+            },
+            {
+                "youtubeId": "il2IrgFHfsg",
+                "title": "The Ooooh Cat"
+            }, {
+                "youtubeId": "a0KJ7l5sNGw",
+                "title": "React Native Firebase",
+            }
+        ];
+
+        var addVideoToList = function (video) { //120 90
+            var videoLink = $('<a>');
+            videoLink.append(video.title);
+            var thumbnailUrl = 'https://img.youtube.com/vi/' + video.youtubeId + '/0.jpg'; // Update thumbnail URL
+            var thumbnailImg = $('<img>');
+            thumbnailImg.attr('src', thumbnailUrl);
+            thumbnailImg.attr('width', 120);
+            thumbnailImg.attr('height', 90);
+            videoLink.append(thumbnailImg);
+
+            videoLink.on('click', function (e) {
+                e.preventDefault();
+
+                var hdr2 = $('<h2></h2>');
+                hdr2.text(video.title);
+
+                var videoEmbed = $('<iframe></iframe>');
+                videoEmbed.attr('src', 'https://www.youtube.com/embed/' + video.youtubeId);
+                videoEmbed.attr('width', 560);
+                videoEmbed.attr('height', 315);
+                videoEmbed.attr('frameborder', 0);
+                videoEmbed.attr('allowfullscreen', 'true');
+
+                $('#video-watcher').before(hdr2);
+
+                var videoWatcher = $('#video-watcher');
+                videoWatcher.hide();
+                videoWatcher.html(videoEmbed);
+                videoWatcher.fadeIn();
+
+
+            });
+
+            var videoItem = $('<li>');
+            videoItem.append(videoLink);
+            $('#videos-list').append(videoItem);
+        }
+
+        for (var i = 0; i < videos.length; i++) {
+            addVideoToList(videos[i]);
+        }
+    </script>
+</body>
+
+</html>
