@@ -5,7 +5,8 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title>Video Watcher</title>
-    <link rel="stylesheet" type="text/css" href="Video_Watcher_files/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="Video_Watcher_files/bootstrap.css"> -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <style type="text/css">
         #videos-list img {
             display: block;
@@ -22,18 +23,19 @@
         </div>
 
         <div class="row">
-            <div class="span3">
+            <div class="col-sm-3">
                 <ul id="videos-list">
 
                 </ul>
             </div>
-            <div class="span9" id="video-watcher" style="display: block;">
+            <div class="col-sm-9" id="video-watcher" style="display: block;">
 
             </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="Video_Watcher_files/jquery.js"></script>
+    <!-- <script type="text/javascript" src="Video_Watcher_files/jquery.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
     <script>
 
         var videos = [
